@@ -6,6 +6,6 @@
 
 ## Авторизация
 
-* [Создание OAuth клиента](sozdanie-oauth-klienta.md)
+* [Создание OAuth клиента](create-oauth-client.md)
 * [Авторизация](methods.md)
 
