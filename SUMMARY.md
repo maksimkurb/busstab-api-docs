@@ -14,4 +14,5 @@
 
 * [Введение](methods/intro.md)
 * [Чтение основной информации пользователя](methods/querying-user-profile.md)
+* [Запрос "Проверка паспорта РФ"](methods/passport-check.md)
 
