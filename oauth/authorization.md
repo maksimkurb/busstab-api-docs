@@ -16,8 +16,10 @@
 ```bash
 curl -X POST \
   https://api-staging.busstab.ru/oauth/token \
+  -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'grant_type=client_credentials&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>'
+  -H 'Postman-Token: 1da8fe69-2020-85ee-0b8e-6433ac59de43' \
+  -d 'grant_type=client_credentials&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>&scope=user:read'
 ```
 {% sample lang="js" %}
 ```js
@@ -27,6 +29,7 @@ var options = {
   headers: {'Content-Type': 'application/x-www-form-urlencoded'},
   form: {
     grant_type: 'client_credentials',
+    scope: 'user:read user.balance:read request.passportCheck:read request.passportCheck:create',
     client_id: '<CLIENT_ID>',
     client_secret: '<CLIENT_SECRET>'
   }
