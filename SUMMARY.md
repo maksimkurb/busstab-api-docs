@@ -13,4 +13,5 @@
 ## Запросы на сервер
 
 * [Введение](methods/intro.md)
+* [Чтение основной информации пользователя](methods/querying-user-profile.md)
 
