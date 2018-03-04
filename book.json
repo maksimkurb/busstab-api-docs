@@ -12,8 +12,8 @@
                     "default": true
                 },
                 {
-                    "lang": "go",
-                    "name": "Go"
+                    "lang": "curl",
+                    "name": "cURL"
                 }
             ]
         }
