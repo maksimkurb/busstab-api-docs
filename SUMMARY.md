@@ -15,4 +15,5 @@
 * [Введение](methods/intro.md)
 * [Чтение основной информации пользователя](methods/querying-user-profile.md)
 * [Запрос "Проверка паспорта РФ". Базовый уровень](methods/passport-check.md)
+* [Запрос "Проверка паспорта РФ". Комплексный уровень](methods/passport-check-complex.md)
 
