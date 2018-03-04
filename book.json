@@ -8,12 +8,13 @@
             "languages": [
                 {
                     "lang": "js",
-                    "name": "JavaScript",
-                    "default": true
+                    "name": "JavaScript"
                 },
                 {
                     "lang": "curl",
-                    "name": "cURL"
+                    "name": "cURL",
+                    "default": true
+
                 }
             ]
         }
