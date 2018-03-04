@@ -19,6 +19,8 @@
 }
 ```
 
+**captchaToken** - токен капчи ([как получить?](/methods/passport-check-captcha.md))
+
 {% method %}
 Запрос:
 ```graphql
