@@ -1,5 +1,8 @@
 {
     "plugins": [ "theme-api" ],
+    "structure": {
+        "summary": "SUMMARY.md"
+    },
     "pluginsConfig": {
         "theme-api": {
             "languages": [
