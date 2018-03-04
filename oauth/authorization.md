@@ -1,30 +1,44 @@
 # Авторизация
 
-Methods allow you to smoothly display code examples in different languages.
+Всего существует несколько методов авторизации OAuth.
+В данный момент доступен метод `client_authorization`, когда приложение работает от имени его владельца, его мы рассмотрим ниже. Остальные методы авторизации (в т.ч. кнопка "Войти с помощью Busstab API") станут доступны в ближайшее время.
+
 
 {% method %}
-## My first method
+## `client_authorization`
 
-My first method exposes how to print a message in JavaScript and Go.
+Для такой авторизации нам необходимо сделать POST-запрос на сервер, передав **client_id** и **client_secret**
 
-{% sample lang="js" %}
-Here is how to print a message to `stdout` using JavaScript.
+{% common %}
+#### `POST https://api-staging.busstab.ru/oauth/token`
 
-```js
-console.log('My first method');
+{% sample lang="curl" %}
+```bash
+curl -X POST \
+  https://api-staging.busstab.ru/oauth/token \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d 'grant_type=client_credentials&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>'
 ```
+{% sample lang="js" %}
+```js
+var options = {
+  method: 'POST',
+  url: 'https://api-staging.busstab.ru/oauth/token',
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+  form: {
+    grant_type: 'client_credentials',
+    client_id: '<CLIENT_ID>',
+    client_secret: '<CLIENT_SECRET>'
+  }
+};
 
-{% sample lang="go" %}
-Here is how to print a message to `stdout` using Go.
-
-```go
-fmt.Println("My first method")
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+  console.log(body);
+});
 ```
 
 {% common %}
-Whatever language you are using, the result will be the same.
+Мы получили `access_token`, который нам необходимо будет прикладывать к каждому запросу на сервер, требующему аутентификацию.
 
-```bash
-$ My first method
-```
 {% endmethod %}

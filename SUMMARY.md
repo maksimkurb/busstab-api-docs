@@ -4,8 +4,8 @@
 
 * [Начало работы с API](README.md)
 
-## Авторизация
+## Аутентификация
 
 * [Создание клиента OAuth](oauth/create-oauth-client.md)
-* [Авторизация](/oauth/authorization.md)
+* [Аутентификация](/oauth/authorization.md)
 
