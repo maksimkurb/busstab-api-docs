@@ -3,12 +3,14 @@
 
 ```graphql
 query {
+  # Получим информацию о текущем пользователе
   loggedInUser {
     id
     displayName
     imageUrl
   }
   
+  # и его последние запросы (до 25 штук)
   latestRequests {
     id
     service {
