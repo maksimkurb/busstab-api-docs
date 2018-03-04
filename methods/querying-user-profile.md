@@ -54,14 +54,6 @@ query {
         },
         "subject": "Павел Овсянкин, 0109 1***02",
         "stage": "FINISHED"
-      },
-      {
-        "id": "abcde-4",
-        "service": {
-          "type": "PASSPORT_CHECK"
-        },
-        "subject": "Олег Неизбежный, 0307 1***50",
-        "stage": "FINISHED"
       }
     ]
   }
