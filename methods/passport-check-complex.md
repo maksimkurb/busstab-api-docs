@@ -19,7 +19,7 @@
 }
 ```
 
-{% module %}
+{% method %}
 Запрос:
 ```graphql
 mutation($input: MakePassportCheckInput!) {
@@ -156,4 +156,4 @@ request(options, function(error, response, body) {
 }
 ```
 
-{% endmodule %}
+{% endmethod %}

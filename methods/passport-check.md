@@ -20,7 +20,7 @@
 
 ![](/assets/MakePassportCheckInput_label.png)
 
-{% module %}
+{% method %}
 ## Базовый уровень проверки паспорта
 Обязательные поля:
 ```
@@ -128,4 +128,4 @@ request(options, function(error, response, body) {
 }
 ```
 
-{% endmodule %}
+{% endmethod %}
