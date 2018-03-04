@@ -7,7 +7,12 @@
 {% method %}
 ## `client_authorization`
 
-Для такой авторизации нам необходимо сделать POST-запрос на сервер, передав **client_id** и **client_secret**
+Для такой авторизации нам необходимо сделать POST-запрос на сервер, передав следующие параметры:
+
+1. **grant_type**: `client_credentials`
+1. **client_id**: Свой ID клиента
+1. **client_secret**: Свой Секрет клиента
+1. **scope**: [Права доступа приложения](/oauth/scope.md)
 
 {% common %}
 #### `POST https://api-staging.busstab.ru/oauth/token`
@@ -16,11 +21,10 @@
 ```bash
 curl -X POST \
   https://api-staging.busstab.ru/oauth/token \
-  -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
-  -H 'Postman-Token: 1da8fe69-2020-85ee-0b8e-6433ac59de43' \
-  -d 'grant_type=client_credentials&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>&scope=user:read'
+  -d 'grant_type=client_credentials&scope=profile:read profile.balance:read&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>'
 ```
+
 {% sample lang="js" %}
 ```js
 var options = {
@@ -29,7 +33,7 @@ var options = {
   headers: {'Content-Type': 'application/x-www-form-urlencoded'},
   form: {
     grant_type: 'client_credentials',
-    scope: 'user:read user.balance:read request.passportCheck:read request.passportCheck:create',
+    scope: 'profile:read profile.balance:read',
     client_id: '<CLIENT_ID>',
     client_secret: '<CLIENT_SECRET>'
   }
@@ -42,6 +46,16 @@ request(options, function (error, response, body) {
 ```
 
 {% common %}
-Мы получили `access_token`, который нам необходимо будет прикладывать к каждому запросу на сервер, требующему аутентификацию.
+Ответ сервера:
+```json
+{
+    "access_token": "36302671a9353087f698ad9a63301c6fd6dae262",
+    "token_type": "Bearer",
+    "expires_in": 32140799999,
+    "scope": "profile:read profile.balance:read"
+}
+```
+
+Мы получили **access_token**, который нам необходимо будет прикладывать к каждому запросу на сервер, требующему аутентификацию.
 
 {% endmethod %}

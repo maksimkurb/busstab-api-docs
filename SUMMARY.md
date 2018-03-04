@@ -8,4 +8,5 @@
 
 * [Создание клиента OAuth](oauth/create-oauth-client.md)
 * [Аутентификация](/oauth/authorization.md)
+* [Права доступа](oauth/scope.md)
 
