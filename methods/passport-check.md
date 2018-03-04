@@ -4,14 +4,19 @@
 
 Нам нужно осуществить запрос на проверку паспорта, для этого нам необходимо выполнить мутацию `makePassportCheckRequest`
 Давайте посмотрим аргументы, которые принимает эта мутация:
+
 ![](/assets/makePassportCheckRequest.png)
+
 Мутация принимает 1 аргумент `input` с типом `MakePassportCheckInput!`
 
 Сам `MakePassportCheckInput` принимает следующие параметры:
+
 ![](/assets/MakePassportCheckInput.png)
+
 Выделенные параметры - обязательны (т.к. у них постфикс `!`)
 
 В описании поля `label` подробно расписано, какие поля необходимы для разных уровней проверки (базовый, комплексной и полной):
+
 ![](/assets/MakePassportCheckInput_label.png)
 
 {% module %}
