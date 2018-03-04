@@ -1,9 +1,11 @@
 # Summary
 
-## Overview
+## Введение
 
-* [My Awesome API](README.md)
+* [Начало работы с API](README.md)
 
-## Methods
+## Авторизация
 
-* [Defining Methods](methods.md)
+* [Создание OAuth клиента](sozdanie-oauth-klienta.md)
+* [Авторизация](methods.md)
+
