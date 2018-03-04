@@ -14,7 +14,6 @@
                     "lang": "curl",
                     "name": "cURL",
                     "default": true
-
                 }
             ]
         }
