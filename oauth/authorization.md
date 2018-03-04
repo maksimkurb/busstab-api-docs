@@ -1,4 +1,4 @@
-# Defining Methods
+# Авторизация
 
 Methods allow you to smoothly display code examples in different languages.
 
