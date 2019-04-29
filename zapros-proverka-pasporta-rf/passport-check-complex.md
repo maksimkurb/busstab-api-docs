@@ -1,31 +1,31 @@
-# Запрос "Проверка Паспорта РФ"
+# Комплексный уровень
 
 ## Комплексный уровень проверки паспорта
+
+### _Outdated: статья относится к старой версии API, в новой версии запрос делается немного по-другому_
+
 Поля запроса:
-```
+
+```text
 {
   input {
     passportSeries
-    passportID
+    passportNumber
     lastName
     firstName
     patronymic (не требуется, если нет отчества)
     birthDate
     birthPlace
     passportIssueDate
-    captcha
-    captchaToken
   }
 }
 ```
 
-**captchaToken** - токен капчи ([как получить?](/methods/passport-check-captcha.md))
-
-{% method %}
 Запрос:
+
 ```graphql
 mutation($input: MakePassportCheckInput!) {
-  makePassportCheckRequest(input: $input) {
+  passportCheck(input: $input) {
     request {
       id
       payload {
@@ -45,36 +45,40 @@ mutation($input: MakePassportCheckInput!) {
 }
 ```
 
-{% sample lang="curl" %}
+{% tabs %}
+{% tab title="curl" %}
 Пример выполнения запроса через cURL:
+
 ```bash
 curl -X POST \
   https://api-staging.busstab.ru/graphql \
   -H 'Authorization: Bearer <access_token>' \
   -H 'Content-Type: application/json' \
   -d '{
-	"query":"mutation($input: MakePassportCheckInput!) {\nmakePassportCheckRequest(input: $input) {\nrequest {\nid\npayload {\npassportIsDeprecated\nitn\nbasic {\ntype\nmessage\n}\ncomplex {\ntype\nmessage\n}\n}\n}\n}\n}",
-	"variables" :{
-		"input": {
-			"level": "COMPLEX",
-			"passportSeries": "1214",
-			"passportID": "123456",
-			"lastName": "Фёдоров",
-			"firstName": "Иван",
-			"patronymic": "Петрович",
-			"birthDate": "04.06.1985",
-			"birthPlace": "гор. Новокузнецк",
-			"passportIssueDate": "04.06.1992",
-			"captcha": "123456",
-			"captchaToken": "ABCDEFGHABCDEFGHABCDEFGH"
-		}
-	}
+    "query":"mutation($input: MakePassportCheckInput!) {\nmakePassportCheckRequest(input: $input) {\nrequest {\nid\npayload {\npassportIsDeprecated\nitn\nbasic {\ntype\nmessage\n}\ncomplex {\ntype\nmessage\n}\n}\n}\n}\n}",
+    "variables" :{
+        "input": {
+            "level": "COMPLEX",
+            "passportSeries": "1214",
+            "passportID": "123456",
+            "lastName": "Фёдоров",
+            "firstName": "Иван",
+            "patronymic": "Петрович",
+            "birthDate": "04.06.1985",
+            "birthPlace": "гор. Новокузнецк",
+            "passportIssueDate": "04.06.1992",
+            "captcha": "123456",
+            "captchaToken": "ABCDEFGHABCDEFGHABCDEFGH"
+        }
+    }
 }'
 ```
+{% endtab %}
 
-{% sample lang="js" %}
+{% tab title="JavaScript" %}
 Пример выполнения запроса на JavaScript:
-```js
+
+```javascript
 var options = {
   method: 'POST',
   url: 'https://api-staging.busstab.ru/graphql',
@@ -106,11 +110,13 @@ request(options, function(error, response, body) {
   if (error) throw new Error(error);
   console.log(body);
 });
-
 ```
-{% common %}
-#### Результат запроса:
-```json
+{% endtab %}
+{% endtabs %}
+
+### Результат запроса:
+
+```javascript
 {
     "data": {
         "makePassportCheckRequest": {
@@ -135,8 +141,9 @@ request(options, function(error, response, body) {
 }
 ```
 
-#### Результат, если введён неправильный код с картинки:
-```json
+### Результат, если введён неправильный код с картинки:
+
+```javascript
 {
     "errors": [
         {
@@ -158,4 +165,3 @@ request(options, function(error, response, body) {
 }
 ```
 
-{% endmethod %}

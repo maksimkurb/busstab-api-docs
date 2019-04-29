@@ -1,23 +1,20 @@
-# Summary
+# Table of contents
 
-## Введение
-
-* [Начало работы с API](README.md)
+* [Введение](README.md)
 
 ## Аутентификация
 
-* [Создание клиента OAuth](oauth/create-oauth-client.md)
-* [Аутентификация](/oauth/authorization.md)
-* [Права доступа](oauth/scope.md)
+* [Создание клиента OAuth](autentifikaciya/create-oauth-client.md)
+* [Аутентификация](autentifikaciya/authorization.md)
+* [Права доступа](autentifikaciya/scope.md)
 
 ## Запросы на сервер
 
-* [Введение](methods/intro.md)
-* [Чтение основной информации пользователя](methods/querying-user-profile.md)
+* [Введение](zaprosy-na-server/intro.md)
+* [Чтение основной информации пользователя](zaprosy-na-server/querying-user-profile.md)
 
 ## Запрос "Проверка паспорта РФ"
 
-* [Базовый уровень](methods/passport-check.md)
-* [Получение токена капчи](methods/passport-check-captcha.md)
-* [Комплексный уровень](methods/passport-check-complex.md)
+* [Базовый уровень](zapros-proverka-pasporta-rf/passport-check.md)
+* [Комплексный уровень](zapros-proverka-pasporta-rf/passport-check-complex.md)
 
